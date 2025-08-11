@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fast-trade-bridge.vercel.app/sitemap.xml
