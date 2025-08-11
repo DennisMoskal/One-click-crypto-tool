@@ -158,4 +158,36 @@
   background: hsl(var(--card));
   border-radius: 0.72rem;
   z-index: -1;
+}/* ===== Readability fixes for /bots ===== */
+
+/* Deutlichere Links */
+a { color: hsl(221, 83%, 53%); text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
+
+/* Karten auf Weiß statt Glas, kräftiger Rand & Schatten */
+.card,
+.bot-card,
+.premium-card {
+  background: #fff !important;
+  color: hsl(var(--foreground)) !important;
+  border: 1px solid #e5e7eb !important; /* slate-200 */
+  backdrop-filter: none !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border-radius: 14px;
 }
+
+/* Überschriften und Texte in Karten dunkler */
+.bot-card h3,
+.card h3,
+.premium-card h3 { color: #0f172a; font-weight: 700; }
+
+.bot-card p,
+.card p,
+.premium-card p,
+.text-muted-content { color: #334155; } /* slate-700 */
+
+/* Grid-Abstände auf Bots-Seite (falls Container zu schmal wirkt) */
+.bots-container { max-width: 72rem; margin-inline: auto; padding: 2.5rem 1rem; }
+.bots-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 640px) { .bots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px){ .bots-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
