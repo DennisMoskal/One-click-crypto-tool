@@ -214,3 +214,35 @@ a:hover { text-decoration: underline; }
   outline: none;
   box-shadow: 0 0 0 3px rgba(139,69,219,.35);
 }
+/* ===== Bot-Icon Kontrast-Fix ===== */
+.bot-icon {
+  width: 3rem;               /* 12 */
+  height: 3rem;              /* 12 */
+  border-radius: 0.75rem;    /* rounded-xl */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+.bot-icon svg {
+  width: 1.5rem;   /* 6 */
+  height: 1.5rem;  /* 6 */
+}
+
+/* Standard (nicht-featured): helles Badge, dunkles Icon */
+.bot-icon--default {
+  background: hsl(var(--secondary));                 /* helles Grau */
+  border: 1px solid hsl(var(--border));
+}
+.bot-icon--default svg {
+  color: #0f172a;  /* slate-900: sehr guter Kontrast */
+}
+
+/* Featured: bunter Verlauf, weißes Icon */
+.bot-icon--featured {
+  /* du kannst auch die vorhandene .gradient-primary Klasse zusätzlich verwenden */
+  background: linear-gradient(135deg, #8b45db 0%, #3b82f6 60%, #8b45db 100%);
+  border: none;
+}
+.bot-icon--featured svg { color: #fff; }
