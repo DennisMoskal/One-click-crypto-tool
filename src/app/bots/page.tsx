@@ -92,8 +92,8 @@ export default function BotsPage() {
               >
                 {/* Icon & Name */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${bot.featured ? 'gradient-primary' : 'bg-secondary'} flex items-center justify-center`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                  <div className={`bot-icon ${bot.featured ? 'bot-icon--featured' : 'bot-icon--default'}`}>
+                    <IconComponent />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{bot.name}</h3>
@@ -131,11 +131,8 @@ export default function BotsPage() {
                   ))}
                 </div>
 
-                {/* CTA */}
-                <Link
-                  href={`/api/go/${bot.id}`}
-                  className="w-full bot-cta"
-                >
+                {/* CTA (einheitlich Maestro-Style) */}
+                <Link href={`/api/go/${bot.id}`} className="w-full bot-cta">
                   Jetzt starten
                   <ArrowRight size={16} />
                 </Link>
