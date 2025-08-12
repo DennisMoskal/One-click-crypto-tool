@@ -191,3 +191,26 @@ a:hover { text-decoration: underline; }
 .bots-grid { display: grid; gap: 1.25rem; }
 @media (min-width: 640px) { .bots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px){ .bots-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Einheitlicher Maestro-Button-Style für alle Bots */
+.bot-cta {
+  background: linear-gradient(135deg, #8b45db 0%, #3b82f6 100%);
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.bot-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59,130,246,0.35);
+  opacity: .95;
+}
+.bot-cta:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139,69,219,.35);
+}
