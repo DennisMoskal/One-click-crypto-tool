@@ -134,11 +134,7 @@ export default function BotsPage() {
                 {/* CTA */}
                 <Link
                   href={`/api/go/${bot.id}`}
-                  className={`w-full ${
-                    bot.featured
-                      ? 'bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 glow-purple hover:glow-blue'
-                      : 'bg-secondary hover:bg-secondary/80'
-                  } text-white py-3 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2`}
+                  className="w-full bot-cta"
                 >
                   Jetzt starten
                   <ArrowRight size={16} />
