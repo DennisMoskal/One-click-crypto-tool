@@ -92,8 +92,8 @@ export default function BotsPage() {
               >
                 {/* Icon & Name */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${bot.featured ? 'gradient-primary' : 'bg-secondary'} flex items-center justify-center`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                  <div className={`bot-icon ${bot.featured ? 'bot-icon--featured' : 'bot-icon--default'}`}>
+                    <IconComponent />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{bot.name}</h3>
@@ -134,7 +134,11 @@ export default function BotsPage() {
                 {/* CTA */}
                 <Link
                   href={`/api/go/${bot.id}`}
-                  className="w-full bot-cta"
+                  className={`w-full ${
+                    bot.featured
+                      ? 'bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 glow-purple hover:glow-blue'
+                      : 'bg-secondary hover:bg-secondary/80'
+                  } text-white py-3 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2`}
                 >
                   Jetzt starten
                   <ArrowRight size={16} />
