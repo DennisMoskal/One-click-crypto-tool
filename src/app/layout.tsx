@@ -39,6 +39,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="gSAsxWmOFdGA-fzAf37lxqrJyMnFL-TiscNlX5FRriI"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen gradient-bg`}
       >
@@ -50,3 +56,4 @@ export default function RootLayout({
     </html>
   );
 }
+
