@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import Head from 'next/head';
 import { ArrowRight, Zap, Shield, Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -6,9 +9,8 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* SEO Meta Tags */}
-      <head>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <Head>
         <title>CryptoPulse - Telegram Krypto Trading Bots & Cross-Chain Bridging</title>
         <meta name="description" content="Handeln und überbrücken Sie Kryptowährungen mühelos mit Telegram-Bots. Schnell, sicher und anfängerfreundlich auf Ethereum, Solana, BSC und mehr." />
         <meta name="keywords" content="Telegram Krypto Bots, Cross-Chain Bridging, Krypto Trading, Ethereum, Solana, BSC, DeFi" />
@@ -17,18 +19,7 @@ export default function HomePage() {
         <meta property="og:description" content="Handeln und überbrücken Sie Kryptowährungen mühelos mit Telegram-Bots" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://cryptopulse.de" />
-        <script type="application/ld+json">
-          {`{
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "CryptoPulse",
-            "description": "Telegram Krypto Trading Bots und Cross-Chain Bridging Plattform",
-            "url": "https://cryptopulse.de"
-          }`}
-        </script>
-      </head>
-
-      <div className="min-h-screen bg-gray-50 text-gray-900">
+      </Head>
         {/* Navigation - Mobile Optimiert */}
         <nav className="bg-white shadow-sm fixed w-full z-50 top-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -317,6 +308,5 @@ export default function HomePage() {
           </div>
         </footer>
       </div>
-    </>
-  );
+    );
 }
