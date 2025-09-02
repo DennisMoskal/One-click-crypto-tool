@@ -9,7 +9,7 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1F2937] via-[#374151] to-[#4B5563] text-white font-sans pattern-grid pattern-gray-800 pattern-opacity-5">
+    <div className="min-h-screen bg-gradient-to-br from-[#0F0F23] via-[#1A1A2E] to-[#16213E] text-white font-sans tech-grid">
       <Head>
         <title>Pulse - Premium Telegram Sniper Bots & Trading Tools</title>
         <meta name="description" content="Professionelle Telegram Sniper Bots, Trading Bots und Bridging Tools für DeFi. Ultraschnelle Ausführung, maximale Sicherheit und präzise Technologie für automatisiertes Krypto-Trading." />
@@ -22,28 +22,117 @@ export default function HomePage() {
       </Head>
 
       <style jsx global>{`
+        /* Advanced geometric background patterns inspired by Maestro */
         .pattern-grid {
           background-image: 
-            linear-gradient(rgba(107, 114, 128, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(107, 114, 128, 0.05) 1px, transparent 1px);
-          background-size: 20px 20px;
-        }
-        .pattern-dots {
-          background-image: radial-gradient(rgba(107, 114, 128, 0.1) 1px, transparent 1px);
-          background-size: 16px 16px;
-        }
-        .pattern-cross {
-          background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(107, 114, 128, 0.05) 5px, rgba(107, 114, 128, 0.05) 10px),
-            repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(107, 114, 128, 0.05) 5px, rgba(107, 114, 128, 0.05) 10px);
+            linear-gradient(rgba(236, 72, 153, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(236, 72, 153, 0.03) 1px, transparent 1px),
+            radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.1) 0%, transparent 50%);
+          background-size: 30px 30px, 30px 30px, 200px 200px, 300px 300px;
         }
         
+        .pattern-dots {
+          background-image: 
+            radial-gradient(rgba(236, 72, 153, 0.15) 2px, transparent 2px),
+            linear-gradient(45deg, rgba(236, 72, 153, 0.02) 25%, transparent 25%),
+            linear-gradient(-45deg, rgba(139, 69, 19, 0.02) 25%, transparent 25%);
+          background-size: 24px 24px, 60px 60px, 60px 60px;
+          background-position: 0 0, 30px 30px, -30px 30px;
+        }
+        
+        .pattern-cross {
+          background-image: 
+            repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(236, 72, 153, 0.03) 8px, rgba(236, 72, 153, 0.03) 16px),
+            repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(139, 69, 19, 0.03) 8px, rgba(139, 69, 19, 0.03) 16px),
+            radial-gradient(ellipse at center, rgba(236, 72, 153, 0.05) 0%, transparent 70%);
+          background-size: 32px 32px, 32px 32px, 400px 400px;
+        }
+        
+        .pattern-circuit {
+          background-image: 
+            linear-gradient(90deg, rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+            linear-gradient(rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+            radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 25%),
+            radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.2) 0%, transparent 25%),
+            radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 30%);
+          background-size: 40px 40px, 40px 40px, 180px 180px, 220px 220px, 160px 160px;
+          background-position: 0 0, 0 0, 0 0, 0 0, 20px 20px;
+        }
+        
+        .pattern-hexagon {
+          background-image: 
+            radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.1) 0%, transparent 30%),
+            radial-gradient(circle at 0% 50%, rgba(139, 69, 19, 0.08) 0%, transparent 30%),
+            radial-gradient(circle at 100% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 30%),
+            linear-gradient(30deg, transparent 30%, rgba(236, 72, 153, 0.03) 30%, rgba(236, 72, 153, 0.03) 70%, transparent 70%);
+          background-size: 120px 120px, 100px 100px, 100px 100px, 80px 80px;
+        }
+        
+        /* Advanced animations and effects */
         .hover-float:hover {
-          transform: translateY(-2px);
+          transform: translateY(-4px) scale(1.02);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .glow-pink {
-          box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+          box-shadow: 
+            0 0 20px rgba(236, 72, 153, 0.4),
+            0 0 40px rgba(236, 72, 153, 0.2),
+            inset 0 0 20px rgba(236, 72, 153, 0.1);
+        }
+        
+        .glow-pulse {
+          animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+          from {
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+          }
+          to {
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.6), 0 0 50px rgba(236, 72, 153, 0.3);
+          }
+        }
+        
+        .gradient-border {
+          position: relative;
+        }
+        
+        .gradient-border::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          padding: 2px;
+          background: linear-gradient(135deg, rgba(236, 72, 153, 0.5), rgba(139, 69, 19, 0.3), rgba(236, 72, 153, 0.5));
+          border-radius: inherit;
+          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          mask-composite: xor;
+          -webkit-mask-composite: xor;
+        }
+        
+        .tech-grid {
+          background-image: 
+            linear-gradient(rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(236, 72, 153, 0.1) 1px, transparent 1px);
+          background-size: 50px 50px;
+          position: relative;
+        }
+        
+        .tech-grid::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.2) 0%, transparent 50%);
+          background-size: 300px 300px, 400px 400px;
+          animation: float-bg 20s ease-in-out infinite;
+        }
+        
+        @keyframes float-bg {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          33% { transform: translate(30px, -30px) rotate(1deg); }
+          66% { transform: translate(-20px, 20px) rotate(-1deg); }
         }
         
         details summary {
@@ -52,35 +141,44 @@ export default function HomePage() {
         details summary::-webkit-details-marker {
           display: none;
         }
+        
+        /* Smooth scrolling and transitions */
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        * {
+          transition: border-color 0.3s ease;
+        }
       `}</style>
 
       {/* Navigation */}
-      <nav className="bg-[#1F2937] shadow-lg border-b border-[#6B7280] fixed w-full z-50 top-0">
+      <nav className="bg-[#0F0F23]/95 backdrop-blur-sm shadow-xl border-b border-[#EC4899]/20 fixed w-full z-50 top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link href="/" className="text-2xl font-bold text-[#D1D5DB] hover:text-[#EC4899] transition-colors">
+            <Link href="/" className="text-2xl font-bold text-[#E5E7EB] hover:text-[#EC4899] transition-all duration-300 glow-pulse">
               Pulse
             </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              <Link href="#home" className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2">
+              <Link href="#home" className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg">
                 Startseite
               </Link>
-              <Link href="#sniper" className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2">
+              <Link href="#sniper" className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg">
                 Sniper Bots
               </Link>
-              <Link href="#bridging" className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2">
+              <Link href="#bridging" className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg">
                 Bridging
               </Link>
-              <Link href="#trading" className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2">
+              <Link href="#trading" className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg">
                 Trading Bots
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2 rounded-lg hover:bg-[#374151] transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-[#EC4899]/20 transition-all duration-300 gradient-border"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menü öffnen"
             >
@@ -90,32 +188,32 @@ export default function HomePage() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t border-[#6B7280] py-4">
+            <div className="md:hidden border-t border-[#EC4899]/20 py-4 bg-[#0F0F23]/95 backdrop-blur-sm">
               <div className="flex flex-col space-y-3">
                 <Link 
                   href="#home" 
-                  className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2"
+                  className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Startseite
                 </Link>
                 <Link 
                   href="#sniper" 
-                  className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2"
+                  className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sniper Bots
                 </Link>
                 <Link 
                   href="#bridging" 
-                  className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2"
+                  className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Bridging
                 </Link>
                 <Link 
                   href="#trading" 
-                  className="text-[#D1D5DB] hover:text-[#EC4899] font-medium transition-colors px-3 py-2"
+                  className="text-[#E5E7EB] hover:text-[#EC4899] font-medium transition-all duration-300 px-3 py-2 hover:bg-[#EC4899]/10 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Trading Bots
@@ -127,23 +225,24 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden px-4 pt-20 pb-16 sm:pt-28 sm:pb-24 bg-[#374151] pattern-dots pattern-gray-700 pattern-opacity-10">
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#E5E7EB] mb-6 leading-tight">
+      <section id="home" className="relative overflow-hidden px-4 pt-20 pb-16 sm:pt-28 sm:pb-24 bg-gradient-to-br from-[#16213E]/50 to-[#0F0F23]/50 pattern-circuit">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#EC4899]/5 via-transparent to-[#8B4513]/5"></div>
+        <div className="relative max-w-7xl mx-auto text-center z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#F8FAFC] mb-6 leading-tight">
             Professionelle{' '}
-            <span className="bg-gradient-to-r from-[#EC4899] via-[#F472B6] to-[#F9A8D4] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#EC4899] via-[#F472B6] to-[#F97316] bg-clip-text text-transparent animate-pulse">
               Telegram Bots
             </span>
             {' '}für DeFi
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-[#D1D5DB] mb-8 max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-base sm:text-lg md:text-xl text-[#E2E8F0] mb-8 max-w-3xl mx-auto leading-relaxed px-2">
             Ultraschnelle Sniper Bots, sichere Bridging-Tools und automatisierte Trading-Lösungen direkt in Telegram. 
             Entwickelt für professionelle Trader und DeFi-Enthusiasten.
           </p>
           <div className="flex justify-center items-center px-4">
             <Link 
               href="#trading" 
-              className="w-full sm:w-auto bg-gradient-to-r from-[#EC4899] to-[#F472B6] hover:from-[#DB2777] hover:to-[#E11D48] text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 shadow-md hover:shadow-lg hover-float flex items-center justify-center min-h-[48px]"
+              className="w-full sm:w-auto bg-gradient-to-r from-[#EC4899] to-[#F472B6] hover:from-[#DB2777] hover:to-[#E11D48] text-white px-8 sm:px-12 py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-500 shadow-xl hover:shadow-2xl glow-pink hover-float flex items-center justify-center min-h-[56px] gradient-border"
             >
               Jetzt starten
             </Link>
@@ -152,14 +251,14 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 px-4 bg-[#4B5563] pattern-cross pattern-gray-700 pattern-opacity-5">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A1A2E]/80 to-[#16213E]/80 pattern-hexagon">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E5E7EB] mb-8 sm:mb-12 px-2 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-8 sm:mb-12 px-2 text-center">
             Warum Pulse wählen?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center p-4 sm:p-6 rounded-xl bg-[#374151] border border-[#6B7280] hover:border-[#EC4899] transition-all duration-300 shadow-md hover:shadow-lg hover-float">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#EC4899] to-[#F9A8D4] flex items-center justify-center">
+            <div className="text-center p-6 sm:p-8 rounded-2xl bg-[#0F0F23]/60 backdrop-blur-sm border border-[#EC4899]/20 hover:border-[#EC4899]/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover-float gradient-border">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-[#EC4899] to-[#F97316] flex items-center justify-center glow-pulse">
                 <Target className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-[#E5E7EB] mb-3">Blitzschnelle Sniper Bots</h3>
